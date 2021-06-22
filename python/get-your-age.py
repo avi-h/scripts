@@ -4,7 +4,6 @@ while True:
     useryear = input('year of birth(XXXX):')
     if useryear.isdigit():
         useryear = int(useryear)
-
         if useryear > current.year:
             print('ERROR:year of birth is higher from current year')
         if useryear == current.year:
@@ -14,7 +13,6 @@ while True:
         if useryear < current.year:
             age = current.year - useryear
             print('you are',age,'years old')
-
 
     else:
         print('please enter proper data')
