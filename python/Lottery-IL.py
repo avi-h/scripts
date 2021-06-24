@@ -1,4 +1,6 @@
-def loterry_IL():
+import random
+
+def loterry_il():
 
     while True:
         import random
@@ -6,15 +8,14 @@ def loterry_IL():
         print('*** Guessing lottery results ***')
         print('==================================')
 
+        for one_num in range(6):
+            one_num = random.randint(1,37)
 
+            print(one_num)
 
-        for x in range(6):
-            x = random.randint(1,37)
-            print(x)
-
-        for y in range(1):
-            y = random.randint(1,7)
-            print('Extra number:',y)
+        for extra_num in range(1):
+            extra_num = random.randint(1,7)
+            print('Extra number:',extra_num)
             print('======================')
             print('*** Best Of Luck ***')
             print('======================')
@@ -23,5 +24,5 @@ def loterry_IL():
         if run_again != 'y':
             break
 
-loterry_IL()
+loterry_il()
 
