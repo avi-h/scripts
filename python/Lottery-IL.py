@@ -1,5 +1,3 @@
-import random
-
 def loterry_il():
 
     while True:
