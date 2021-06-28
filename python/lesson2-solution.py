@@ -1,4 +1,6 @@
 #A.
+import gspread
+
 num1 = 10
 num2 = 20
 
@@ -90,6 +92,7 @@ def the_str():
     print(x + " " + y)
 
 the_str()
+
 
 
 
