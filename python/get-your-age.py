@@ -3,6 +3,7 @@ while True:
     current = date.today()
     useryear = input('year of birth(XXXX):')
     if useryear.isdigit():
+
         useryear = int(useryear)
         if useryear > current.year:
             print('ERROR:year of birth is higher from current year')
