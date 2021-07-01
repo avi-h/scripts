@@ -27,7 +27,6 @@ while True:
                            + str(generate_number.max_num) + ':')
         return (user_guess)
 
-
     # ------end of function-----------------
 
     # --------function-----------------------
@@ -40,14 +39,16 @@ while True:
             user_guess = int(user_guess)
 
             if secret_num == user_guess:
+                print('================')
                 print ('***', True, '***')
-                print ('===============')
                 print ('Boom Shakalaka')
                 print ('===============')
             else:
                 if (user_guess < int(11)) and (user_guess > int(0)):
+                    print('==========================')
                     print ('---->', False, '<----')
                     print ('The secret number was:', secret_num)
+                    print('===========================')
                 elif user_guess == int(0):
                     print ('Zero is not acceptable')
                 elif user_guess >= int(11):
@@ -56,7 +57,6 @@ while True:
             print ('WRONG: not VALID data')
 
         # -----end of function
-
 
     def play():
         compare_results()
