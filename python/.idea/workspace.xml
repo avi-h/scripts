@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7159f69-0c33-4bbb-82e2-1d7af95996d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WorldOfGames/GuessGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorldOfGames/GuessGame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-guess.py" beforeDir="false" afterPath="$PROJECT_DIR$/test-guess.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.GuessGame">
+  <component name="RunManager" selected="Python.test-guess">
     <configuration name="ErrorHandle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,8 +151,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.GuessGame" />
         <item itemvalue="Python.test-guess" />
+        <item itemvalue="Python.GuessGame" />
         <item itemvalue="Python.get-your-age" />
         <item itemvalue="Python.ErrorHandle" />
         <item itemvalue="Python.Lottery-IL (1)" />

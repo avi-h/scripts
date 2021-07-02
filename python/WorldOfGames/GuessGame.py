@@ -39,10 +39,10 @@ while True:
             user_guess = int(user_guess)
 
             if secret_num == user_guess:
-                print('================')
+                print('=============================')
                 print ('***', True, '***')
-                print ('Boom Shakalaka')
-                print ('===============')
+                print ('BINGO BINGO, Boom Shakalaka')
+                print ('============================')
             else:
                 if (user_guess < int(11)) and (user_guess > int(0)):
                     print('==========================')

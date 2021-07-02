@@ -2,11 +2,7 @@ while True:
     # -------function----------------
     def generate_number():
         import random
-        difficulty = [2, 3, 4, 5, 6, 7, 8, 9, 10]
-        num_add = 1
-        index = 0
-        difficulty.insert(index, int(num_add))
-
+        difficulty = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         random.shuffle(difficulty)
         secret_number = int(random.choice(difficulty))
 
@@ -17,9 +13,7 @@ while True:
         return secret_number
         # ------end of function-----------
 
-
     secret_num = generate_number()
-
 
     # --------function---------------
 
@@ -29,11 +23,7 @@ while True:
                            + str(generate_number.max_num) + ':')
         return (user_guess)
 
-
     # ------end of function-----------------
-
-
-
 
     # --------function-----------------------
 
@@ -45,14 +35,16 @@ while True:
             user_guess = int(user_guess)
 
             if secret_num == user_guess:
+                print('=============================')
                 print ('***', True, '***')
-                print ('===============')
-                print ('Boom Shakalaka')
-                print ('===============')
+                print ('BINGO BINGO, Boom Shakalaka')
+                print ('============================')
             else:
                 if (user_guess < int(11)) and (user_guess > int(0)):
+                    print('==========================')
                     print ('---->', False, '<----')
                     print ('The secret number was:', secret_num)
+                    print('===========================')
                 elif user_guess == int(0):
                     print ('Zero is not acceptable')
                 elif user_guess >= int(11):
@@ -62,7 +54,6 @@ while True:
 
         # -----end of function
 
-
     def play():
         compare_results()
 
@@ -71,5 +62,3 @@ while True:
     retry = input('Try Again?(y/n):')
     if retry != 'y':
         break
-
-
