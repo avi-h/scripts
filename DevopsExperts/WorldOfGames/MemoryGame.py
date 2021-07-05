@@ -8,7 +8,6 @@ def generate_sequence():
 #get level input from user
 def list_from_user():
     import random
-    memo_time = float(0.7)
     difficulty_user = input('How many numbers would you like to guess(up to 101)?')
     if difficulty_user.isdigit():
         difficulty = difficulty_user
@@ -46,15 +45,15 @@ def is_list_equal():
         game_nums.sort()
 
         if user_num == game_nums:
-            print('================')
-            print('True')
-            print('================')
-            print('Your answer:', user_num)
-            print('Correct Numbers:', game_nums)
+            print('===============')
+            print('**** TRUE ****')
+            print('===============')
+            print('Your Numbers:', user_num)
+            print('My Numbers:', game_nums)
         else:
-            print('================')
-            print('False')
-            print('================')
+            print('=================')
+            print('----> FALSE <----')
+            print('=================')
             print('Your answer:', user_num)
             print('Correct Numbers:', game_nums)
 
