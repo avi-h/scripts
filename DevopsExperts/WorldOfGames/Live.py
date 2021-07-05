@@ -40,5 +40,3 @@ if game_select.isdigit():
 
     elif game_select > 3 or game_select == 0:
         print('not accepted value')
-
-
