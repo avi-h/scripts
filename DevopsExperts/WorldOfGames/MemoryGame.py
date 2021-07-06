@@ -37,9 +37,11 @@ def is_list_equal():
             print('')
 
         user_num = []
+        i = int(0)
         for index in game_nums:
-            i = int(input('Enter Your Number:'))
-            user_num.append(i)
+            i = i + + 1
+            index = int(input('Enter Your Number('+str(i)+'):'))
+            user_num.append(index)
 
         user_num.sort()
         game_nums.sort()
@@ -61,8 +63,10 @@ def is_list_equal():
         return 'ERROR: Value not Accepted'
 
 def play():
-    is_list_equal()
+    while True:
+        is_list_equal()
+        retry = input('Try again(y/n)?')
+        if retry != 'y':
+            break
 
 play()
-
-
