@@ -26,7 +26,8 @@ def get_guess_from_user():
     no_exception = False
     while no_exception == False:
         try:
-            user_guess = float(input("type your guess of ILS value for " + str(usd_amount) + " $ : "))
+            user_guess = float(input("type your guess of ILS value for "
+                                     + str(usd_amount) + " $ : "))
             no_exception = True
         except ValueError as err:
             print(err)
