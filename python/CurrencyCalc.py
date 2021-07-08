@@ -7,7 +7,7 @@ def currency_calc():
             #get currency API and add to a dictionary:
 
             from_rate = input(str('From Currency:'))
-            from_rate_amount = float(input('Mount:'))
+            from_rate_amount = float(input('How much?'))
             to_rate = input(str('To Currency:'))
             url = 'https://open.er-api.com/v6/latest/'
             results = requests.request('GET', url+from_rate.upper())
