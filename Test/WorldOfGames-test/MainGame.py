@@ -5,5 +5,5 @@ import Utils
 print(welcome("Guys"))
 load_game()
 # Pause_cmd()
-run_flask()  # Rise web server to show game scores
+# run_flask()  # Rise web server to show game scores
 

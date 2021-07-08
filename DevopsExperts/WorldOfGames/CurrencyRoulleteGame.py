@@ -1,44 +1,51 @@
-import random
+import random,json,requests
 
 difficulty = 3
-usd_value = 0
+
+def generate_usd_amount():
+    usd_amount = random.randint(1,101)
+    return usd_amount
 
 
-def generate_USD_value():
-    global usd_value
-    usd_value = random.randint(1, 101)
+def get_money_interval():
+    difficulty = 3
+    from_rate = 'usd'
+    url = 'https://open.er-api.com/v6/latest/'
+    results = requests.request('GET', url + from_rate.upper())
+    currency_dict_all = json.loads(results.text)
+    dict_rates = currency_dict_all.get('rates')
+    rate_ils = dict_rates.get('ILS')
+    return rate_ils
 
-
-def get_money_interval(currency_rate):
-
-
-
-    return (usd_value*currency_rate - 5 + difficulty,usd_value*currency_rate + 5 - difficulty )
+    #return int((usd_value*rate_ils - 5 + difficulty)), int((usd_value*rate_ils + 5 - difficulty ))
 
 
 def get_guess_from_user():
-    global user__guess
-    no_exception = False  # flag to keep exception info
-    while not no_exception:
-        print("type your guess of ILS value of " + str(usd_value) + " $ : ")
+    global user_guess
+    usd_amount = generate_usd_amount()
+    no_exception = False
+    while no_exception == False:
         try:
-            user__guess = float(input(">>>"))
-            no_exception = True  # The exception was not thrown, so the loop will be finished.
-        except ValueError as e:
-            print(str(e))
-    return user__guess
+            user_guess = float(input("type your guess of ILS value for " + str(usd_amount) + " $ : "))
+            no_exception = True
+        except ValueError as err:
+            print(err)
+
+    rate_ils = get_money_interval()
+
+    system_guess = float(usd_amount * rate_ils - 5 + difficulty), \
+                   float(usd_amount * rate_ils + 5 + difficulty)
+
+    print('Your Guess:', user_guess)
+    print('system guess:', system_guess)
+
 
 def play():
-    generate_USD_value()
-    guess_from_user = get_guess_from_user()
-    lower_interval  = get_money_interval(0)[0]
-    upper_interval = get_money_interval(0)[1]
-    print("system interval: (" + str("{:3.2f}".format(lower_interval)) + "," +
-          str("{:3.2f}".format(upper_interval)) + ")\nyour guess: "
-          + str(guess_from_user))
-    return (guess_from_user <= upper_interval) &\
-           (guess_from_user >= lower_interval)
+    get_guess_from_user()
 
 
 play()
+
+
+
 
