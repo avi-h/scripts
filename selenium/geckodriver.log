@@ -1,0 +1,164 @@
+1625784991398	geckodriver	INFO	Listening on 127.0.0.1:60991
+1625784994448	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofile1JKRnT"
+1625784994830	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofile1JKRnT\\search.json.mozlz4", (void 0)))
+1625784996542	Marionette	INFO	Listening on port 60999
+1625784996603	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625785024896	Marionette	INFO	Stopped listening on port 60999
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625785084520	geckodriver	INFO	Listening on 127.0.0.1:61046
+1625785087612	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofileobnMfX"
+1625785087847	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofileobnMfX\\search.json.mozlz4", (void 0)))
+1625785089325	Marionette	INFO	Listening on port 61054
+1625785089644	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625785131512	Marionette	INFO	Stopped listening on port 61054
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofileGDwj2m"
+1625785131675	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofileGDwj2m\\search.json.mozlz4", (void 0)))
+1625785133321	Marionette	INFO	Listening on port 61101
+1625785133435	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625785137522	Marionette	INFO	Stopped listening on port 61101
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625785161947	geckodriver	INFO	Listening on 127.0.0.1:61134
+1625785165036	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofileBCye0R"
+1625785165278	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofileBCye0R\\search.json.mozlz4", (void 0)))
+1625785166798	Marionette	INFO	Listening on port 61142
+1625785167087	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625785168986	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1625785173036	Marionette	INFO	Stopped listening on port 61142
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625785179198	geckodriver	INFO	Listening on 127.0.0.1:61336
+1625785182260	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofile2Lksv4"
+1625785182505	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofile2Lksv4\\search.json.mozlz4", (void 0)))
+1625785184131	Marionette	INFO	Listening on port 61344
+1625785184315	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625785186119	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Alegria\AppData\Local\Temp\rust_mozprofile2Lksv4\protections.sqlite
+1625785238238	Marionette	INFO	Stopped listening on port 61344
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625785308812	geckodriver	INFO	Listening on 127.0.0.1:61541
+1625785311886	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofileoOyKRl"
+1625785312120	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofileoOyKRl\\search.json.mozlz4", (void 0)))
+1625785313692	Marionette	INFO	Listening on port 61549
+1625785313939	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625785315846	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1625785347819	Marionette	INFO	Stopped listening on port 61549
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x390141,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xAB0006,name=PWebSocket::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Alegria\AppData\Local\Temp\rust_mozprofileoOyKRl\protections.sqlite
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625786058422	geckodriver	INFO	Listening on 127.0.0.1:61743
+1625786061503	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofilenud3Pl"
+1625786061733	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofilenud3Pl\\search.json.mozlz4", (void 0)))
+1625786063307	Marionette	INFO	Listening on port 61751
+1625786063547	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625786065518	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1625786077401	Marionette	INFO	Stopped listening on port 61751
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x390141,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xAB0006,name=PWebSocket::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Alegria\AppData\Local\Temp\rust_mozprofilenud3Pl\protections.sqlite
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625786121029	geckodriver	INFO	Listening on 127.0.0.1:61949
+1625786124118	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofilea1PMDG"
+1625786124342	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofilea1PMDG\\search.json.mozlz4", (void 0)))
+1625786125846	Marionette	INFO	Listening on port 61957
+1625786126187	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625786128210	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1625786140085	Marionette	INFO	Stopped listening on port 61957
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x390141,name=PContent::Msg_ScriptError) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xAB0006,name=PWebSocket::Msg_DeleteSelf) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Alegria\AppData\Local\Temp\rust_mozprofilea1PMDG\protections.sqlite
+1625786235090	geckodriver	INFO	Listening on 127.0.0.1:65518
+1625786238167	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofile0rB57D"
+1625786238398	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofile0rB57D\\search.json.mozlz4", (void 0)))
+1625786239925	Marionette	INFO	Listening on port 65526
+1625786240212	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625786242179	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 718: Error: Phase "Sqlite.jsm: wait until all connections are closed" is finished, it is too late to register completion condition "protections.sqlite#0: waiting for shutdown"
+1625786254343	Marionette	INFO	Stopped listening on port 65526
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1625786294907	geckodriver	INFO	Listening on 127.0.0.1:49345
+1625786297999	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofile7bZJZ3"
+1625786298221	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Alegria\\AppData\\Local\\Temp\\rust_mozprofile7bZJZ3\\search.json.mozlz4", (void 0)))
+1625786299732	Marionette	INFO	Listening on port 49353
+1625786300031	Marionette	WARN	TLS certificate errors will be ignored for this session
+1625786301986	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1625786306917	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'interactive'.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 718: Error: Phase "Sqlite.jsm: wait until all connections are closed" is finished, it is too late to register completion condition "protections.sqlite#0: waiting for shutdown"
+1625786313237	Marionette	INFO	Stopped listening on port 49353
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
