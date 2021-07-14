@@ -32,7 +32,7 @@ if txt_verify:
             print('moving ',txt_path,'to: ',dir_path)
             os.rename(txt_path, dir_path + txt_name)
             dirfile = os.path.exists(dir_path+txt_path)
-            
+
 
         else:
             print(txt_path,' doesnt exist')
