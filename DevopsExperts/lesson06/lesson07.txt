@@ -1,3 +1,4 @@
 git log
 git branch
 git add -u (similar to Git -A ?))!
+git checkout
