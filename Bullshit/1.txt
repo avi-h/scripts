@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 World
-=======
 line one is not here!
 line 2
 line 3
 line 4
->>>>>>> parent of 92a874f (***)
