@@ -2,14 +2,15 @@
 $dstsubALL = '0.0.0.0/0'
 
 $NewRulePort = '5433'
-$NewRuleSub = 10.10.0.0/16
+$NewRuleSub = 10.106.0.0/16
 $NewRuleProtocols = '6'
 $action = 'allow'  #or: reject
-$L7_Servers = $null #"*************.com"
+$L7_Servers = $null #"artifactory-build.com"
 $L7_Schemes = $null #"http"
 
-$User = '****'
-$Devices = @("*******,*********,******')
+$User = 'admin'
+$Devices = @("IL-access",'EU-ACCESS',
+'APAC-ACCESS','NYC-ACCESS','LAC-ACCESS')
 
 
 #check F5-APM module
@@ -21,8 +22,6 @@ if ($CheckModule1 -notlike $module1) {Install-Module $module1 -Force -Verbose}
 else {Write-Host $module1 'module is installed' -ForegroundColor Yellow}
 if ($CheckModule2 -notlike $module2) {Install-Module $module2 -Force -Verbose}
 else {Write-Host $module2 'module is installed' -ForegroundColor Yellow}
-
-
 
 
 #Device list & Select
