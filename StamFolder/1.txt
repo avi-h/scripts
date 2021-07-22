@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-World 
-=======
-Hello 
->>>>>>> test
