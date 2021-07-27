@@ -1,10 +1,13 @@
-node('agents'){
-    
-    stage('Build01'){
-        
-        powershell "Vagrant\\HyperV\\CentOS\\${params.Build_VM}.ps1"
-        
+pipeline {
+    agent any
+
+    stages {
+        stage('Build01') {
+            steps {
+                powershell "Vagrant\\HyperV\\CentOS\\${params.Build_VM}.ps1"
+            }
+        }
+
     }
-    
-    
+
 }

@@ -12,7 +12,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage('list files') {
+        stage('build VM') {
             steps {
                 powershell 'Vagrant\\HyperV\\CentOS\\build_PS.ps1'
 
