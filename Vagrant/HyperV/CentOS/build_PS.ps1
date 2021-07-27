@@ -1,6 +1,6 @@
 $Feature = 'Microsoft-Hyper-V-All'
 $OS = 'centos'
-$Vagrantfile = 'https://raw.githubusercontent.com/avi-h/scripts/master/Vagrant/HyperV/CentOS/Vagrantfile'
+$Vagrantfile = 'https://raw.githubusercontent.com/avi-h/scripts/master/Vagrant/Vagrantfile'
 $VagrantfileName = 'Vagrantfile'
 $VMpath = "c:\HyperV\Vagrant\$OS"
 $testpath = Test-Path $VMpath
