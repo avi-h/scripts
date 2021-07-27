@@ -15,6 +15,7 @@ pipeline {
         stage('list files') {
             steps {
                 powershell 'Vagrant\\HyperV\\CentOS\\build_PS.ps1'
+
             }
         }
     }
