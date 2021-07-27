@@ -14,7 +14,7 @@ pipeline {
         }
         stage('list files') {
             steps {
-                bat 'dir Vagrant'
+                bat 'dir Vagrant\\HyperV\\CentOS'
             }
         }
     }
