@@ -7,6 +7,7 @@ yum install vim -y
 yum install tcpdump -y
 yum install docker -y
 yum install gnupg2 -y
+yum install wget -y
 systemctl enable docker
 systemctl start docker
 systemctl stop firewalld
