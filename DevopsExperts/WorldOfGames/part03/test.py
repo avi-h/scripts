@@ -12,7 +12,12 @@ if folder_verify == False:
 else:
     print(path,'already exist.')
 
-os.system("cd "+path)
+box_name = os.system('vagrant box list')
+verify_box = os.path.exists(path + '\\' + boxfile)
+
+
+
+
 
 
 

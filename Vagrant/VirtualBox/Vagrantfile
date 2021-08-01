@@ -1,20 +1,31 @@
-import os, requests, json
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntuSRV"
+  config.vm.disk :disk, name: "SYSTEM", size: "50GB"
+  #config.vm.disk :dvd, name: "installer", path: "./installer.iso"
 
-vm_name = 'ubuntuSRV'
-path = 'C:\\VirtualBox\\Vagrant\\' + vm_name
-folder_verify = os.path.exists(path)
-boxfile = 'vb_ubuntuSRV.box'
-provider = 'virtualbox'
+  #NETWORK
+  # config.vm.box_check_update = false
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  # config.vm.network "private_network", ip: "192.168.33.10"
+  # config.vm.network "public_network"
+  
+  #SYNCED FOLDER
+  # config.vm.synced_folder "../data", "/vagrant_data"
 
-if folder_verify == False:
-    os.makedirs(path)
-    print('Directory', path, 'created.')
-else:
-    print(path,'already exist.')
-
-os.system("cd "+path)
-
-
-
-
-
+  #PROVIDER
+   config.vm.provider "virtualbox" do |vb|
+     vb.gui = true
+     vb.name = 'ubuntuSRV'
+     vb.memory = "2048"
+   end
+  
+  #PROVISION
+   config.vm.provision "shell", inline: <<-SHELL
+     apt-get update
+     apt-get install -y docker.io docker-compose
+     sudo apt install gnupg2 pass -y
+     systemctl enable docker
+     systemctl start docker
+   SHELL
+end
