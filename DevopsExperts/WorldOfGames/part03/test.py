@@ -1,4 +1,5 @@
 import os, requests, json
+import vagrant
 
 vm_name = 'ubuntuSRV'
 path = 'C:\\VirtualBox\\Vagrant\\' + vm_name
@@ -14,10 +15,6 @@ else:
 
 box_name = os.system('vagrant box list')
 verify_box = os.path.exists(path + '\\' + boxfile)
-
-
-
-
 
 
 
