@@ -1,7 +1,7 @@
 version: '3'
 networks:
   zabbix-net:
-    #external: true
+    external: true
 services:
   # my-app:
   # image: ${docker-registry}/my-app:1.0
