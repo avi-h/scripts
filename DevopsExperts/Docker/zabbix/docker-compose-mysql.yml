@@ -9,6 +9,7 @@ services:
   # - 3000:3000
   mysql:
     image: mysql
+    container_name: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
     #  - MYSQL_USER=zabbix
