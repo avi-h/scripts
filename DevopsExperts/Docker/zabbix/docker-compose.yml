@@ -42,8 +42,8 @@ services:
       - MYSQL_PASSWORD=password
       - ZBX_SERVER_HOST=zabbix-srv
       - PHP_TZ=Asia/Jerusalem
-volumes: 
-  db-data
+#volumes: 
+#  db-data
 
 # Docker Networks
 #networks:
