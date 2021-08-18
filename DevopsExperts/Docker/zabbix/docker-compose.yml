@@ -9,6 +9,7 @@ services:
   # - 3000:3000
   mysql:
     image: mysql
+    container_name: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
     #  - MYSQL_USER=zabbix
@@ -22,6 +23,7 @@ services:
 
   zabbix-srv:
     image: zabbix/zabbix-server-mysql
+    container_name: zabbix-srv
   #  networks: 
   #    - zabbix-net
     ports:
@@ -33,6 +35,7 @@ services:
 
   zabbix-web:
     image: zabbix/zabbix-web-apache-mysql
+    container_name: zabbix-web
   #  networks: 
   #    - zabbix-net
     ports: 
