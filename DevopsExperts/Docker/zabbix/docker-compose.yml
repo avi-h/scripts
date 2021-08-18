@@ -30,6 +30,7 @@ services:
       - DB_SERVER_HOST=mysql 
       - MYSQL_USER=root
       - MYSQL_PASSWORD=password
+
   zabbix-web:
     image: zabbix/zabbix-web-apache-mysql
   #  networks: 
@@ -42,8 +43,9 @@ services:
       - MYSQL_PASSWORD=password
       - ZBX_SERVER_HOST=zabbix-srv
       - PHP_TZ=Asia/Jerusalem
-#volumes: 
-#  db-data
+      
+volumes: 
+  db-data:
 
 # Docker Networks
 #networks:
