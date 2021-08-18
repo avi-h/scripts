@@ -19,7 +19,7 @@ services:
     ports:
       - 3306:3306
     volumes: 
-      - db-data:/var/lib/mysql
+      - mysql-db:/var/lib/mysql
 
   zabbix-srv:
     image: zabbix/zabbix-server-mysql
@@ -48,7 +48,7 @@ services:
       - PHP_TZ=Asia/Jerusalem
       
 volumes: 
-  db-data:
+  mysql-db:
 
 # Docker Networks
 #networks:
