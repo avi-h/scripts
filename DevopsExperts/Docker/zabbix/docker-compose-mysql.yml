@@ -1,0 +1,24 @@
+version: '3'
+#networks:
+#  zabbix-net:
+#    external: true
+services:
+  # my-app:
+  # image: ${docker-registry}/my-app:1.0
+  # ports:
+  # - 3000:3000
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    #  - MYSQL_USER=zabbix
+    #  - MYSQL_PASSWORD=zabbix
+  #  networks: 
+  #    - zabbix-net
+    ports:
+      - 3306:3306
+    volumes: 
+      - db-data:/var/lib/mysql
+
+volumes: 
+  db-data:
