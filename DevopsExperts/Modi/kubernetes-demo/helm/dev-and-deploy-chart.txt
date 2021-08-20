@@ -1,0 +1,13 @@
+helm create mychart
+helm install test1 ./mychart --dry-run  --debug
+helm install test1 ./mychart --debug
+helm upgrade test1 --set service.type=NodePort
+helm package ./mychart
+helm upgrade test2 mychart-0.1.0.tgz --set replicaCount=3
+kubectl get pods
+helm delete test2
+
+
+
+helm install my-release bitnami/jenkins --set service.type=NodePort
+

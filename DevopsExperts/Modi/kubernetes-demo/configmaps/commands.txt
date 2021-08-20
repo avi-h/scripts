@@ -1,0 +1,8 @@
+kubectl create configmap game-config --from-file=./configmaps/configs/
+kubectl describe configmaps game-config OR kubectl get configmaps game-config -o yaml
+
+=== Single pod config maps environment variable ===========
+kubectl apply -f configmaps/pods/config-map.yaml
+kubectl apply -f configmaps/pods/pod-single-configmap-env-variable.yaml
+kubectl describe pod/dapi-test-pod
+kubectl exec pod/dapi-test-pod -- env | grep SPECIAL_HOW
