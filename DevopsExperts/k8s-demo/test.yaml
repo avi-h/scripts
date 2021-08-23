@@ -10,11 +10,12 @@ spec:
   type: NodePort
 ---
 apiVersion: v1
-kind: pod
+kind: Deployment
 metadata:
   name: mysql
 spec:
   selector:
+  replicas: 2
     matchLabels:
       app: mysql
     metadata:
