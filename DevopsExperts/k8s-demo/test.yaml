@@ -16,13 +16,7 @@ metadata:
 spec:
   selector:
   replicas: 2
-    matchLabels:
-      app: mysql
-    metadata:
-      labels:
-        app: mysql
-    spec:
-      containers:
+  containers:
       - image: mysql
         name: mysql
         env:
@@ -32,6 +26,12 @@ spec:
         ports:
         - containerPort: 3306
           name: mysql
+    matchLabels:
+      app: mysql
+    metadata:
+      labels:
+        app: mysql
+        
         #volumeMounts:
         #- name: mysql-persistent-storage
         #  mountPath: /var/lib/mysql
