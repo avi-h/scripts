@@ -1,17 +1,16 @@
- apiVersion: v1
-  kind: Pod
-  metadata:
-    labels:
-      run: mysqldb
-    name: mysqldb
-    namespace: default
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: mysqldb
+  name: mysqldb
   spec:
-    containers:
-    - env:
-      - name: MYSQL_ROOT_PASSWORD
-        value: password
-      image: mysql
-      name: mysqldb
-      ports:
-      - containerPort: 3306
-        protocol: TCP
+  containers:
+  - env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: password
+    image: mysql
+    name: mysqldb
+    ports:
+    - containerPort: 3306
+      protocol: TCP
