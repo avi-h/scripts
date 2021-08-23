@@ -10,7 +10,7 @@ spec:
   type: NodePort
 ---
 apiVersion: v1
-kind: Deployment
+kind: pod
 metadata:
   name: mysql
 spec:
