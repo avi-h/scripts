@@ -25,7 +25,7 @@ spec:
         app: mysql
     spec:
       containers:
-      - image: mysql:5.6
+      - image: mysql
         name: mysql
         env:
           # Use secret in real usage
@@ -34,10 +34,11 @@ spec:
         ports:
         - containerPort: 3306
           name: mysql
-        volumeMounts:
-        - name: mysql-persistent-storage
-          mountPath: /var/lib/mysql
-      volumes:
-      - name: mysql-persistent-storage
-        persistentVolumeClaim:
-          claimName: mysql-pv-claim
+          #Volumes
+        #volumeMounts:
+        #- name: mysql-vol
+        #  mountPath: /var/lib/mysql
+      #volumes:
+      #- name: mysql-vol
+      #  persistentVolumeClaim:
+      #    claimName: mysql-pv-claim
