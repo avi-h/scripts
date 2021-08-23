@@ -6,13 +6,11 @@ metadata:
     run: mysqldb
 spec:
   containers:
-      - image: puckel/docker-airflow
-        name: airflow
+      - image: mysql
+        name: mysqldb
         env:
-          - name: LOAD_EX
-            value: t
-  image: mysql
-  name: mysqldb
+          - name: MYSQL_ROOT_PASSWORD
+            value: password
   ports:
   - containerPort: 3306
     protocol: TCP
