@@ -15,10 +15,9 @@ metadata:
   name: mysql
 spec:
   selector:
+  replicas: 2
     matchLabels:
-      app: mysql
-  strategy:
-    type: Recreate
+      app: mysql     
   template:
     metadata:
       labels:
