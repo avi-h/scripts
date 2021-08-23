@@ -1,14 +1,15 @@
+--- 
 apiVersion: v1
 kind: Pod
-metadata:
-  
-  labels:
+metadata: 
+  labels: 
     run: mysqldb
   name: mysqldb
-spec:
-  containers:
-  - env:
-    - name: MYSQL_ROOT_PASSWORD
-      value: password
+spec: 
+  containers: 
+    - 
+      env: 
+        - 
+          name: MYSQL_ROOT_PASSWORD
+          value: password
   image: mysql
-  name: mysqldb
