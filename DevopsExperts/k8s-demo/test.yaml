@@ -7,17 +7,25 @@ spec:
   - port: 3306
   selector:
     app: mysql
-  type: NodePort
+  clusterIP: None
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
 spec:
   selector:
-  replicas: 2
-  containers:
-      - image: mysql
+    matchLabels:
+      app: mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - image: mysql:5.6
         name: mysql
         env:
           # Use secret in real usage
@@ -26,16 +34,10 @@ spec:
         ports:
         - containerPort: 3306
           name: mysql
-    matchLabels:
-      app: mysql
-    metadata:
-      labels:
-        app: mysql
-        
-        #volumeMounts:
-        #- name: mysql-persistent-storage
-        #  mountPath: /var/lib/mysql
-      #volumes:
-      #- name: mysql-persistent-storage
-      #  persistentVolumeClaim:
-      #    claimName: mysql-pv-claim
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
