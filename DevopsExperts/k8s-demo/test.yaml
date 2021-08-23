@@ -10,21 +10,21 @@ spec:
   - name: foo # Actually, no port is needed.
     port: 3306
     targetPort: 3306
-
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mysqldb
-  labels:
+---
+ apiVersion: v1
+  kind: Pod
+  metadata:
+    labels:
+      run: mysqldb
     name: mysqldb
-spec:
-  containers:
-  - image: mysql
-    name: mysqldb
-    env:
-    - name: MYSQL_ROOT_PASSWORD
+    namespace: default
+  spec:
+    containers:
+    - env:
+      - name: MYSQL_ROOT_PASSWORD
         value: password
-
-    command:
-      - sleep
-      - "10"
+      image: mysql
+      name: mysqldb
+      ports:
+      - containerPort: 3306
+        protocol: TCP
