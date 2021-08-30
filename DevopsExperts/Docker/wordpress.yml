@@ -15,7 +15,7 @@ services:
 #    depends_on:
 #      - mysql
     image: wordpress:latest
-    container_name: mysql
+    container_name: wordpress
     ports:
       - "8000:80"
     restart: always
