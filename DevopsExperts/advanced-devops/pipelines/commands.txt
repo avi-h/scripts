@@ -1,0 +1,2 @@
+helm repo add jenkinsrepo https://charts.jenkins.io
+helm install jenkins jenkinsrepo/jenkins --set controller.serviceType=NodePort
