@@ -1,44 +1,41 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodb
+  name: mysql
   labels:
-    app: mongodb
+    app: mysql
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: mongodb
+      app: mysql
   template:
     metadata:
       labels:
-        app: mongodb
+        app: mysql
     spec:
       containers:
-      - name: mongodb
-        image: mongo
+      - name: mysql
+        image: mysql
         ports:
-        - containerPort: 27017
+        - containerPort: 3306
         env:
-        - name: MONGO_INITDB_ROOT_USERNAME
+        - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mongodb-secret
-              key: mongodb-user
-        - name: MONGO_INITDB_ROOT_PASSWORD
-          valueFrom: 
-            secretKeyRef:
-              name: mongodb-secret
-              key: mongodb-pass
+              name: mysql-secret
+              key: mysql-root-pass
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongodb-svc
+  name: mysql-svc
 spec:
   selector:
-    app: mongodb
+    app: mysql
+  Type: NodePort
   ports:
     - protocol: TCP
-      port: 27017
-      targetPort: 27017
+      port: 3306
+      targetPort: 3306
+      nodePort: 33006
