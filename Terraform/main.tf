@@ -2,6 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
+#add security group & traffic rules
 resource "aws_security_group" "sec-grp-devops" {
   name = "sec-grp-devops"
   description = "allow ssh and web access"
@@ -39,6 +40,7 @@ resource "aws_security_group" "sec-grp-devops" {
   }
 }
 
+#create key pair to push the instances
 resource "aws_key_pair" "alegria-lap" {
   key_name   = "alegria-lap"
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDZqAvvd4hYJqcW/Z6ScQwZFvHAeSKcKVk1RPKzg/nNk9vOt1T0YlzpkzRVLW9NG6vAs6vY2ZwDu2rBLVULSMnhBNvkkYdm7kbqZgJ/nlp6OV+LEvMpq2LVgHI4yWCxt02limGylkPsavGP9FrVW0UV1mWG8ObPQ8mfF1YhYfbh4h49q6ffsAuFAKQLoq///Ih8ikuoEJeZdFkN9NU9ofKlAxBw5D1W1yORYae8kAqXsg5AJaa/SFV/OsUsiEI6SZY2gyRePMRupoLKJS9t1AtqFao/MXa97QA0R5EJq4BUri3/+nlzMs5I/nSizUzIGnIdR1u+B36aiRtwaUfVT0BelPAVmPnaHhncdjVriJozIp4dh5KSdfqaYjZvEL28SLj9P9dEjmVQ8yy9pu69E1UCz9eApkmKB472DJrsDR/pWY5dzUwxxtsahL70J/feuRgnR892yPOwkrRGRi1U29jtTJMm/FIK8V/6TfxdzoxImgKpXpgWfLEFF7I8ux1RSEM= alegria@Alegria-Lap01"
@@ -55,6 +57,7 @@ resource "aws_instance" "terraform-web01" {
 
 }
 
+#create instances
 resource "aws_instance" "terraform-web02" {
   ami = "ami-0747bdcabd34c712a"
   instance_type = "t2.micro"
@@ -65,6 +68,7 @@ resource "aws_instance" "terraform-web02" {
   key_name = "alegria-lap"
 }
 
+#create load balancer
 resource "aws_elb" "lb-LaKukaracha" {
   name               = "lb-LaKukaracha"
   internal           = false
@@ -89,6 +93,7 @@ resource "aws_elb" "lb-LaKukaracha" {
 
 }
 
+#print elb and servers public addresses
 output "aws_elb" {
   value = "http://${aws_elb.lb-LaKukaracha.dns_name}"
 }
