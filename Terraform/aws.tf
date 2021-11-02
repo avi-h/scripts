@@ -69,7 +69,8 @@ resource "aws_instance" "terraform-web02" {
 }
 ----------------------------------------------------- */
 #create instances based on count Module.
-resource "aws_instance" "web0" {
+
+resource "aws_instance" "web" {
   count = 2
   ami = "ami-0747bdcabd34c712a"
   instance_type = "t2.micro"
@@ -108,13 +109,10 @@ resource "aws_instance" "web0" {
 }
 
 
-output "public_dns" {
-  value = "1. ssh ubuntu@${aws_instance.terraform-web01.public_dns}"
-}
 output "aws_instance" {
   value = "web02 = ssh ubuntu@${aws_instance.terraform-web02.public_dns}"
-} */
+}
 
 output "aws_instance" {
   value = "web02 = ssh ubuntu@${aws_instance.web0[count.index]}"
-}
+} */
