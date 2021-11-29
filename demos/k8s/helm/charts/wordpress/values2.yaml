@@ -1,0 +1,81 @@
+
+#-----------------------
+mariadb:
+  enabled: false
+#--------------------------------
+## Database Settings
+externalDatabase:
+  host: mysql.db
+  user: wpadmin
+  password: password
+  database: wordpress
+  port: 3306
+
+
+## Site Info
+wordpressUsername: wpadmin
+wordpressPassword: password
+wordpressEmail: wpadmin@local.com
+wordpressFirstName: wp
+wordpressLastName: admin
+wordpressBlogName: La Vida Loca!
+
+replicaCount: "1"
+
+#persistence:
+#  enabled: false
+#---------------------------
+#ingress:
+ # enabled: true
+ # pathType: ImplementationSpecific
+ # apiVersion: ""
+ # ingressClassName: ""
+ # hostname: wordpress.local
+ # path: /
+ # annotations: {}
+ # tls: false
+ # extraHosts: []
+ # extraPaths: []
+ # extraTls: []
+#  secrets: []
+#--------------------------------------------------
+#service:
+ # type: NodePort
+ # port: 80
+ # httpsPort: 443
+ # httpsTargetPort: https
+ # nodePorts: 
+ #   http: "30003"
+ #   https: "30004"
+  #clusterIP: ""
+  #loadBalancerIP: ""
+  #loadBalancerSourceRanges: []
+  #externalTrafficPolicy: Cluster
+  #annotations: {}
+  #extraPorts: []
+
+#----------------------------------------------------
+#wordpress:
+ # extraEnvVars:
+  #  - name: WORDPRESS_DB_HOST
+   #   valueFrom:
+    #    configMapKeyRef:
+     #     name: cm-db
+      #    key: mysql_url
+
+    #- name: WORDPRESS_DB_NAME
+    #  value: wordpress
+
+    #- name: WORDPRESS_DB_USER
+    #  valueFrom:
+        #secretKeyRef:
+         # name: secret-all
+          #key: wpUser
+
+    #- name: WORDPRESS_DB_PASSWORD
+     # valueFrom:
+      #  secretKeyRef:
+       #   name: secret-all
+        #  key: wpUser
+
+

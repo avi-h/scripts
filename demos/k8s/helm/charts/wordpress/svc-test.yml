@@ -1,0 +1,88 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: wp
+    meta.helm.sh/release-namespace: db-apps
+  creationTimestamp: "2021-11-29T00:22:54Z"
+  labels:
+    app.kubernetes.io/instance: wp
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: wordpress
+    helm.sh/chart: wordpress-12.2.1
+  name: wp-wordpress
+  namespace: db-apps
+  resourceVersion: "706969"
+  uid: addddf6b-ec61-4ea7-a0c1-d967d38da70c
+spec:
+  clusterIP: 10.102.248.120
+  clusterIPs:
+  - 10.102.248.120
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    nodePort: 31218
+    port: 80
+    protocol: TCP
+    targetPort: http
+  - name: https
+    nodePort: 31099
+    port: 443
+    protocol: TCP
+    targetPort: https
+  selector:
+    app.kubernetes.io/instance: wp
+    app.kubernetes.io/name: wordpress
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: localhost
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: wp
+    meta.helm.sh/release-namespace: db-apps
+  creationTimestamp: "2021-11-29T00:22:54Z"
+  labels:
+    app.kubernetes.io/instance: wp
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: wordpress
+    helm.sh/chart: wordpress-12.2.1
+  name: wp-wordpress
+  namespace: db-apps
+  resourceVersion: "706969"
+  uid: addddf6b-ec61-4ea7-a0c1-d967d38da70c
+spec:
+  clusterIP: 10.102.248.120
+  clusterIPs:
+  - 10.102.248.120
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    nodePort: 31218
+    port: 80
+    protocol: TCP
+    targetPort: http
+  - name: https
+    nodePort: 31099
+    port: 443
+    protocol: TCP
+    targetPort: https
+  selector:
+    app.kubernetes.io/instance: wp
+    app.kubernetes.io/name: wordpress
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: localhost

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-my-admin
+  labels:
+    app: php-my-admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-my-admin
+  template:
+    metadata:
+      labels:
+        app: php-my-admin
+    spec:
+      containers:
+      - name: php-my-admin
+        image: phpmyadmin
+        ports:
+        - containerPort: 80
+        env:
+        - name: PMA_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: cm-db
+              key: mysql_url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-my-admin
+spec:
+  type: NodePort
+  selector:
+    app: php-my-admin
+  ports:
+    - protocol: TCP
+      port: 80 # can be any port
+      targetPort: 80 #the container's port
+      nodePort: 30301 #must be between 30000 to 32767

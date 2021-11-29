@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cm-db
+data:
+  mongo_url: mongo-db.db
+  mysql_url: mysql.db
