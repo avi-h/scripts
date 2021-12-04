@@ -31,11 +31,11 @@ kind: Service
 metadata:
   name: mysql
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: mysql
   ports:
     - protocol: TCP
       port: 3306
-      targetPort: 3306 #the container's port
-      nodePort: 30001 #must be between 30000 to 32767
+      #targetPort: 3306 #the container's port
+      #nodePort: 30001 #must be between 30000 to 32767

@@ -31,11 +31,11 @@ kind: Service
 metadata:
   name: php-my-admin
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: php-my-admin
   ports:
     - protocol: TCP
       port: 80 # can be any port
-      targetPort: 80 #the container's port
-      nodePort: 30301 #must be between 30000 to 32767
+      #targetPort: 80 #the container's port
+      #nodePort: 30301 #must be between 30000 to 32767

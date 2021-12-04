@@ -4,6 +4,8 @@
     labels:
       name: ingress-db-apps
     name: ingress-db-apps
+    annotations:
+      kubernetes.io/ingress.class: "ingress-controller-default-backend"
   spec:
     rules:
     - host: phpadmin.local.com
