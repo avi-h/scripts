@@ -1,3 +1,0 @@
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-
-helm install nginx-controller-custom ingress-nginx/ingress-nginx --set controller.ingressClass=nginx-controller-custom --set controller.publishService.enabled=true --set controller.scope.enabled=true --set controller.scope.namespace=db-apps --set rbac.create=true --set rbac.scope=true --set controller.admissionWebhooks.enabled=false --version 2.16.0
