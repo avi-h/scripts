@@ -1,3 +1,5 @@
+#example to display A-Z letters
+#change the numbers range to display other elements
 
 $A_to_Z = @()
 
