@@ -1,5 +1,3 @@
-﻿#Script Description
-
 #URLs 
 
 do {
