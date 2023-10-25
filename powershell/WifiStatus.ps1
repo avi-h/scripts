@@ -1,4 +1,5 @@
-﻿$status = 'Connected'
+#displays Wifi connection name and signal strength
+$status = 'Connected'
 
 $WifiState = gwmi win32_networkadapter | 
 ? {($_.netconnectionid -like "*wi-fi*") -and 
