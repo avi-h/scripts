@@ -1,10 +1,6 @@
-﻿$alph=@()
-65..90|
-
+﻿$A_to_Z=@()
+65..90 |
 foreach {
-$alph+=[char]$_ + '.'
+$A_to_Z+=[char]$_ + '.'
 }
-
-$alph
-
-
+$A_to_Z
