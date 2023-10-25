@@ -1,4 +1,4 @@
-﻿$A_to_Z=@()
+﻿$A_to_Z = @()
 65..90 |
 foreach {
 $A_to_Z+=[char]$_ + '.'
