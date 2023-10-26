@@ -10,15 +10,15 @@ select netconnectionid,
 e={$status}}
 
 if ($WifiState) {
-$SSIDName = ((netsh wlan show interface) -match "ssid" -Replace ‘\s+ssid\s+:\s+’,'') | select -SkipLast 1
-$Signal = (netsh wlan show interface) -match ‘Signal’ -Replace ‘\s+signal\s+:\s+’,'' 
+$SSIDName = ((netsh wlan show interface) -match "ssid" -Replace '\s+ssid\s+:\s+','') | select -SkipLast 1
+$Signal = (netsh wlan show interface) -match 'Signal' -Replace '\s+signal\s+:\s+','' 
 
 
 #$str = [string]$signal -replace '%',''
 
 #$number = [int]$str
 
-#-----------------------------------------------------
+#-----------------------------------------
 
 Write-Host "Connected to $SSIDName WiFi network" -ForegroundColor Yellow -BackgroundColor Black
 
