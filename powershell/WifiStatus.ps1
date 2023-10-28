@@ -1,4 +1,4 @@
-#displays Wifi connection name and signal strength
+#displays Wifi connection name and signal strength.
 $status = 'Connected'
 
 $WifiState = gwmi win32_networkadapter | 
