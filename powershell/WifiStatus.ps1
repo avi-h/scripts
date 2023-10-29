@@ -24,32 +24,32 @@ $Signal = (netsh wlan show interface) -match 'Signal' -Replace '\s+signal\s+:\s+
 #$number = [int]$str
 
 #-----------------------------------------
+Write-Host
+Write-Host "Connected:" $true.ToString().toupper()
 
-Write-Host "Connected to $SSIDName WiFi network" -ForegroundColor Yellow -BackgroundColor Black
+Write-Host "SSID:" $SSIDName
 
-Write-Host "WiFi signal: $signal" -ForegroundColor Green -BackgroundColor Black
+Write-Host "Signal:" $Signal.ToUpper()
 
 } else {
 
-Write-Host "WiFi network is NOT connected"  -ForegroundColor Gray -BackgroundColor Black | Out-GridView
+Write-Host "WiFi connection:" $false.ToString().ToUpper()
 }
 
 #-----------------------------------------
 
 #verify internet connection
 $testurl = 'google.com'
-$intconnection = Test-NetConnection -ComputerName $testurl -InformationLevel Detailed
+$intconnection = Test-NetConnection -ComputerName $testurl -WarningAction SilentlyContinue
 
 if ($intconnection.PingSucceeded -like $true) {
 
 
-Write-Host "internet connection:"
-Write-Host $true.ToString().ToUpper() -ForegroundColor Green
+Write-Host "Internet Connection:" $true.ToString().ToUpper()
 
 } else {
 
-Write-Host "internet connection:"
-Write-Host $false.ToString().ToUpper() -ForegroundColor Red -BackgroundColor Gray
+Write-Host "internet connection:" $false.ToString().ToUpper()
 }
-
+Write-Host
 Read-Host 'Press Enter to exit'
