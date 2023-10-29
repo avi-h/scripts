@@ -34,7 +34,6 @@ Write-Host "WiFi signal: $signal" -ForegroundColor Green -BackgroundColor Black
 Write-Host "WiFi network is NOT connected"  -ForegroundColor Gray -BackgroundColor Black | Out-GridView
 }
 
-Read-Host 'Press Enter to exit'
 #-----------------------------------------
 
 #verify internet connection
@@ -53,3 +52,4 @@ Write-Host "internet connection:"
 Write-Host $false.ToString().ToUpper() -ForegroundColor Red -BackgroundColor Gray
 }
 
+Read-Host 'Press Enter to exit'
