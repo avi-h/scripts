@@ -1,6 +1,10 @@
-#displays Wifi connection name and signal strength.
+#displays Wifi connection name and signal strength
+#tests the internet connection (true,false)
+#---------------------------------------------------
+
 $status = 'Connected'
 
+#verify Wifi connection
 $WifiState = gwmi win32_networkadapter | 
 ? {($_.netconnectionid -like "*wi-fi*") -and 
 ($_.name -notlike "*virtual*" ) -and
@@ -9,6 +13,7 @@ select netconnectionid,
 @{l='Status'
 e={$status}}
 
+#gettting and displaying data
 if ($WifiState) {
 $SSIDName = ((netsh wlan show interface) -match "ssid" -Replace '\s+ssid\s+:\s+','') | select -SkipLast 1
 $Signal = (netsh wlan show interface) -match 'Signal' -Replace '\s+signal\s+:\s+','' 
@@ -30,6 +35,21 @@ Write-Host "WiFi network is NOT connected"  -ForegroundColor Gray -BackgroundCol
 }
 
 Read-Host 'Press Enter to exit'
+#-----------------------------------------
+
+#verify internet connection
+$testurl = 'google.com'
+$intconnection = Test-NetConnection -ComputerName $testurl -InformationLevel Detailed
+
+if ($intconnection.PingSucceeded -like $true) {
 
 
+Write-Host "internet connection:"
+Write-Host $true.ToString().ToUpper() -ForegroundColor Green
+
+} else {
+
+Write-Host "internet connection:"
+Write-Host $false.ToString().ToUpper() -ForegroundColor Red -BackgroundColor Gray
+}
 
