@@ -71,3 +71,6 @@ $output = @($result01
 $result02)
 
 $output
+
+Write-Host
+Read-Host "Press Enter to exit"
