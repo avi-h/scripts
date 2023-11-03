@@ -72,5 +72,4 @@ $result02)
 
 $output | sort keys| ft -AutoSize
 
-Write-Host
 Read-Host "Press Enter to exit"
