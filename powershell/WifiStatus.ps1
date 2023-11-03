@@ -1,6 +1,10 @@
 #displays Wifi connection name and signal strength
 #tests the internet connection (true,false)
+#output results in hash table
 #---------------------------------------------------
+
+$result = @(
+
 
 $status = 'Connected'
 
@@ -24,18 +28,23 @@ $Signal = (netsh wlan show interface) -match 'Signal' -Replace '\s+signal\s+:\s+
 #$number = [int]$str
 
 #-----------------------------------------
-Write-Host
-Write-Host "Connected:" $true.ToString().toupper()
+$result01 = @{
 
-Write-Host "SSID:" $SSIDName
+"WiFi connection" = $true.ToString().toupper()
 
-Write-Host "Signal:" $Signal.ToUpper()
+"SSID" = $SSIDName
+
+"Signal" = $Signal.ToUpper() }
 
 } else {
 
-Write-Host "WiFi connection:" $false.ToString().ToUpper()
-}
+$result01 = @{
 
+"WiFi connection" = $false.ToString().ToUpper()
+} 
+ 
+ } 
+ 
 #-----------------------------------------
 
 #verify internet connection
@@ -44,12 +53,21 @@ $intconnection = Test-NetConnection -ComputerName $testurl -WarningAction Silent
 
 if ($intconnection.PingSucceeded -like $true) {
 
-
-Write-Host "Internet Connection:" $true.ToString().ToUpper()
+$result02 = @{
+"Internet Connection" = $true.ToString().ToUpper()
+}
 
 } else {
 
-Write-Host "internet connection:" $false.ToString().ToUpper()
+$result02 = @{
+"internet connection" = $false.ToString().ToUpper()
 }
-Write-Host
-Read-Host 'Press Enter to exit'
+  }
+   
+  ) 
+
+$output = @($result01
+
+$result02)
+
+$output
