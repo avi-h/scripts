@@ -21,3 +21,4 @@ curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.
 sudo yum install -y powershell
 sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config
 shutdown -r now
+#end of bash
