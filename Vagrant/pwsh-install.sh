@@ -29,16 +29,16 @@ sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 
 
 # RHEL 7.x uses yum and RHEL 8+ uses dnf
-if [ $(bc<<<"$majorver < 8") ]
-then
+#if [ $(bc<<<"$majorver < 8") ]
+#then
     # Update package index files
-    sudo yum update
+    #sudo yum update
     # Install PowerShell
-#    sudo yum install powershell -y
-else
+    #sudo yum install powershell -y
+#else
     # Update package index files
-    sudo dnf update
+    #sudo dnf update
     # Install PowerShell
-#    sudo dnf install powershell -y
-fi
+#   sudo dnf install powershell -y
+#fi
 
