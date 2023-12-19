@@ -1,6 +1,6 @@
-﻿$PartitionStyle = 'GPT'
-$FileSystem = 'exFat' #ntfs,fat32,exFAT,Fat,ReFS
-$isoPath = 'C:\data\ISO\Win11_23H2_English_x64.iso'
+﻿$PartitionStyle = 'GPT' # 'GPT' or 'MBR'
+$FileSystem = 'ntfs' #ntfs,fat32,exFAT,Fat,ReFS
+$isoPath = 'C:\data\ISO\WinPE_x64_PS.iso'
 
 #get usb drives
 $list = Get-Disk | ? BusType -eq USB | select  Number,FriendlyName,
@@ -31,8 +31,13 @@ $continue = Read-Host "Disk $Selected is selected,Formating?(y/n)"
 if ($continue -like 'y') {
 Clear-Disk -Number $Selected -RemoveData -RemoveOEM -Confirm:$false
 Set-Disk -Number $Selected -PartitionStyle $PartitionStyle
+
+if ($PartitionStyle -like 'MBR') {
+New-Partition -DiskNumber $Selected -UseMaximumSize -IsActive:$true -AssignDriveLetter | 
+Format-Volume -FileSystem $FileSystem } else {
+
 New-Partition -DiskNumber $Selected -UseMaximumSize -AssignDriveLetter | 
-Format-Volume -FileSystem $FileSystem
+Format-Volume -FileSystem $FileSystem }
 
 Write-Host "Disk $Selected is Formated" -ForegroundColor Yellow
 
