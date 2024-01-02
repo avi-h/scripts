@@ -1,0 +1,18 @@
+<Configuration>
+  <Info Description="Office Professional Plus 2021 (64-bit)" />
+  <Add OfficeClientEdition="64" Channel="PerpetualVL2021" SourcePath="C:\data\tools\ODT\OfficeSetup">
+    <Product ID="ProPlus2021Volume" PIDKEY="#####-#####-#####-#####-#####">
+      <Language ID="en-us" />
+	  <ExcludeApp ID="Lync" />
+	  <ExcludeApp ID="Access" />
+	  <ExcludeApp ID="Bing" />
+	  <ExcludeApp ID="Groove" />
+	  <ExcludeApp ID="OneDrive" />
+	  <ExcludeApp ID="OneNote" />
+	  <ExcludeApp ID="Publisher" />
+	  <ExcludeApp ID="Teams" />
+    </Product>
+  </Add>
+  <RemoveMSI />
+  <Display Level="Full" AcceptEULA="TRUE" />
+</Configuration>

@@ -1,0 +1,47 @@
+<!-- Office 2021 enterprise client configuration file sample. To be used for Office 2021 
+     enterprise volume licensed products only, including Office 2021 Professional Plus,
+     Visio 2021, and Project 2021.
+
+     Do not use this sample to install Office 365 products.
+
+     For detailed information regarding configuration options visit: http://aka.ms/ODT. 
+     To use the configuration file be sure to remove the comments
+
+     The following sample allows you to download and install Office 2021 Professional Plus,
+     Visio 2021 Professional, and Project 2021 Professional directly from the Office CDN.
+
+     This configuration file will remove all other Click-to-Run products in order to avoid
+     product conflicts and ensure successful setup.
+ -->
+
+
+
+<Configuration>
+
+  <Add SourcePath="D:" OfficeClientEdition="64">
+    <Product ID="ProPlus2021Retail">
+      <Language ID="en-us" />
+      <ExcludeApp ID="Lync" />
+	  <ExcludeApp ID="Access" />
+	  <ExcludeApp ID="Bing" />
+	  <ExcludeApp ID="Groove" />
+	  <ExcludeApp ID="OneDrive" />
+	  <ExcludeApp ID="OneNote" />
+	  <ExcludeApp ID="Publisher" />
+	  <ExcludeApp ID="Teams" />
+    </Product>
+  </Add>
+  <!--<Property Name="SharedComputerLicensing" Value="0" />
+  <Property Name="SCLCacheOverride" Value="0" />
+  <Property Name="AutoActivate" Value="0" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="FALSE" />
+  <Property Name="DeviceBaseLicensing" Value="0" />
+  <Updates Enabled="FALSE">
+      
+  <!--  <RemoveMSI All="True" /> -->
+
+  <Display Level="Full"  AcceptEULA="TRUE" />
+
+  <!--  <Property Name="AUTOACTIVATE" Value="1" />  -->
+
+</Configuration>
