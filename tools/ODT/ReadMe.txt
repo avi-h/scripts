@@ -6,3 +6,6 @@ microsoft office deployment tool (ODT)
 
 note:
 change the "SourcePath" value in XML config file to yours
+
+more help info:
+https://help.techsoup.net.nz/hc/en-us/articles/360021355293-Install-Microsoft-Office-2021-using-the-Office-Deployment-Tool
