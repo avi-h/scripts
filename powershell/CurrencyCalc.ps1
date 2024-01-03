@@ -8,8 +8,12 @@ Write-Host "====================================================================
 Write-Host "NOTE: Make sure you type CORRECTLY the currency international code type.
 Case-sensitive is not mandatory.
 
-Example: for US Dollar type: USD, for Euros type: EUR, for UK type: GBP ." -ForegroundColor Yellow -BackgroundColor Black
+Example: for US Dollar type: USD, for Euros type: EUR, for UK type: GBP ." -ForegroundColor Yellow -BackgroundColor DarkGray
 Write-Host "======================================================================="
+Write-Host "currency code list can be found here:
+=========================================
+https://www.iban.com/currency-codes/"
+Write-Host "========================================="
 
 try {
 
