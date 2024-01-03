@@ -1,3 +1,4 @@
+Clear-Host
 Write-Host
 Write-Host "========================================="
 Write-Host "wellcome to currency exchange calculator." -ForegroundColor Yellow -BackgroundColor Black
