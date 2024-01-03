@@ -1,5 +1,5 @@
+do {
 Clear-Host
-Write-Host
 Write-Host "========================================="
 Write-Host "wellcome to currency exchange calculator." -ForegroundColor Yellow -BackgroundColor Black
 Write-Host "========================================="
@@ -11,8 +11,6 @@ Case-sensitive is not mandatory.
 Example: for US Dollar type: USD, for Euros type: EUR, for UK type: GBP ." -ForegroundColor Yellow -BackgroundColor Black
 Write-Host "======================================================================="
 
-do {
-Clear-Host
 try {
 
 $UserInputValid = $true
