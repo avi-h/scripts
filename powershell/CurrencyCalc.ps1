@@ -4,9 +4,9 @@ do {
 try {
 
 $UserInputValid = $true
-$FromCurrency = Read-Host "1.From which Currency ?"
-[decimal]$Sum = Read-Host "2.How Much ?(Numbers)"
-$ToCurrency =   Read-Host "3.To which Currency ?"
+$FromCurrency = Read-Host "1. From which Currency ?"
+[decimal]$Sum = Read-Host "2. How Much ?(Numbers)"
+$ToCurrency =   Read-Host "3. To which Currency ?"
 
 $uri = 'https://open.er-api.com/v6/latest/'
 
