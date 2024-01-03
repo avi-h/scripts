@@ -2,8 +2,12 @@ Write-Host
 Write-Host "========================================="
 Write-Host "wellcome to currency exchange calculator." -ForegroundColor Yellow -BackgroundColor Black
 Write-Host "========================================="
-Write-Host "to get your currency rate, answer the following 3 questions:" -ForegroundColor Yellow -BackgroundColor Black
-Write-Host "============================================================"
+Write-Host "to get your currency rate, answer the following 3 questions" -ForegroundColor Yellow -BackgroundColor Black
+Write-Host "======================================================================="
+Write-Host "NOTE: Make sure you type CORRECTLY the currency international code type.
+Example: for US Dollar type: USD, for Euros type: EUR, for UK type: GBP .
+Case-sensitive is not mandatory." -ForegroundColor Yellow -BackgroundColor Black
+Write-Host "======================================================================="
 
 do {
 
