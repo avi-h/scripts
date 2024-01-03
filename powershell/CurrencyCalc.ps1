@@ -12,8 +12,8 @@ Example: for US Dollar type: USD, for Euros type: EUR, for UK type: GBP ." -Fore
 Write-Host "======================================================================="
 Write-Host "currency code list can be found here:
 =========================================
-https://www.iban.com/currency-codes"
-Write-Host "========================================="
+https://www.iban.com/currency-codes
+========================================="
 
 try {
 
