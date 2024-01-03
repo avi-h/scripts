@@ -1,6 +1,4 @@
 ﻿
-### Currency calc with error handling ###
-
 do {
 
 try {
