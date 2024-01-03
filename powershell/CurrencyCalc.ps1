@@ -1,3 +1,9 @@
+Write-Host
+Write-Host "========================================="
+Write-Host "wellcome to currency exchange calculator." -ForegroundColor Yellow -BackgroundColor Black
+Write-Host "========================================="
+Write-Host "to get your currency rate, answer the following 3 questions:" -ForegroundColor Yellow -BackgroundColor Black
+Write-Host "============================================================"
 
 do {
 
