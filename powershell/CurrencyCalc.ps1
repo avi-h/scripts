@@ -12,7 +12,7 @@ Example: for US Dollar type: USD, for Euros type: EUR, for UK type: GBP ." -Fore
 Write-Host "======================================================================="
 
 do {
-
+Clear-Host
 try {
 
 $UserInputValid = $true
