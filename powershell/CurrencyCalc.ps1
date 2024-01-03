@@ -16,8 +16,8 @@ https://www.iban.com/currency-codes
 try {
 
 $UserInputValid = $true
-$FromCurrency = Read-Host "1. From which Currency ?(ex: EUR)"
-$ToCurrency =   Read-Host "2. To what Currency ?(ex: USD)"
+$FromCurrency = Read-Host "1. From which Currency ?(ex: eur)"
+$ToCurrency =   Read-Host "2. To what Currency ?(ex: usd)"
 [decimal]$Sum = Read-Host "3. How Much ?(ex: 50)"
 
 
