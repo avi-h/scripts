@@ -36,7 +36,7 @@ if (($response.result -match 'success') -and
 
 Write-Host $Sum $response.base_code =  ($response.rates.$ToCurrency * $Sum) $ToCurrency.ToString().ToUpper() -ForegroundColor Green -BackgroundColor Black
 
-} else {Write-Host "Error in url request" -ForegroundColor Red -BackgroundColor Black}
+} else {Write-Host "Error in url request(User input)" -ForegroundColor Red -BackgroundColor Black}
   }
 
 $re_run = Read-Host 'run again?(y/n)'
