@@ -3,12 +3,10 @@ Clear-Host
 Write-Host "========================================="
 Write-Host "wellcome to currency exchange calculator." -ForegroundColor Yellow -BackgroundColor Black
 Write-Host "========================================="
-Write-Host "to get your currency rate, answer the following 3 questions" -ForegroundColor Yellow -BackgroundColor Black
-Write-Host "======================================================================="
-Write-Host "NOTE: Make sure you type CORRECTLY the currency international code type.
+Write-Host "NOTE: type your desired currency code to covert.
 Case-sensitive is not mandatory.
 
-Example: for US Dollar type: USD, for Euros type: EUR, for UK type: GBP ." -ForegroundColor Yellow -BackgroundColor DarkGray
+Example: for US Dollar type: USD, for Euros type: EUR, for UK type: GBP ." -ForegroundColor Yellow -BackgroundColor Black
 Write-Host "======================================================================="
 Write-Host "currency code list can be found here:
 =========================================
@@ -18,9 +16,9 @@ https://www.iban.com/currency-codes
 try {
 
 $UserInputValid = $true
-$FromCurrency = Read-Host "1. From which Currency ?"
-$ToCurrency =   Read-Host "2. To what Currency ?"
-[decimal]$Sum = Read-Host "3. How Much ?(Numbers)"
+$FromCurrency = Read-Host "1. From which Currency ?(ex: EUR)"
+$ToCurrency =   Read-Host "2. To what Currency ?(ex: USD)"
+[decimal]$Sum = Read-Host "3. How Much ?(ex: 50)"
 
 
 $uri = 'https://open.er-api.com/v6/latest/'
