@@ -1,5 +1,6 @@
 ﻿$PartitionStyle = 'GPT'
-$FileSystem = 'Fat32' #ntfs,Fat32,exFat
+$FileSystem = 'exFAT' #ntfs,Fat32,exFat
+
 #get usb drives
 $list = Get-Disk | ? BusType -eq USB | select  Number,FriendlyName,
 @{l='Size(GB)'
@@ -23,14 +24,19 @@ $Selected = Read-Host "Select USB Drive Number($CountStart-$countEnd)"
 
 }until ($Selected -match $match)
 
-$continue = Read-Host "Disk $Selected is selected,Formating?(y/n)"
+$continue = Read-Host "Disk $Selected is selected, Formating?(y/n)"
 
 #formatting
 if ($continue -like 'y') {
 Clear-Disk -Number $Selected -RemoveData -RemoveOEM -Confirm:$false
 Set-Disk -Number $Selected -PartitionStyle $PartitionStyle
-New-Partition -DiskNumber $Selected -UseMaximumSize -AssignDriveLetter | 
+
+if ($PartitionStyle -notlike 'GPT') {
+New-Partition -DiskNumber $Selected -UseMaximumSize -AssignDriveLetter -IsActive | 
 Format-Volume -FileSystem $FileSystem
+} else {
+New-Partition -DiskNumber $Selected -UseMaximumSize -AssignDriveLetter | 
+Format-Volume -FileSystem $FileSystem }
 
 Write-Host "Disk $Selected is Formated" -ForegroundColor Yellow
 
