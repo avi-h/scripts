@@ -16,7 +16,7 @@
      script: "{{os_script}}"
   
    - name: install apps via "{{pkg_mgr}}"
-     apt:
+     yum:
       name: "{{apps}}"
       state: "{{state}}"
 

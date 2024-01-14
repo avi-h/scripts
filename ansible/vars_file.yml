@@ -1,6 +1,6 @@
 {
         "username": "root",
-        "group_name":"ubuntu",
+        "group_name":"centos",
         "script_centos": "./scripts/docker-base-centos.sh",
         "script_ubuntu": "./scripts/docker-base-ubuntu.sh",
         "installer_centos": "yum",
