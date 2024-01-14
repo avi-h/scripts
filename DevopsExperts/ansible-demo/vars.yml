@@ -1,5 +1,5 @@
 ---
-- hosts: servers
+- hosts: all
 
   vars:
   - var1: "Aviel"

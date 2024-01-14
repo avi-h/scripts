@@ -1,0 +1,24 @@
+---
+- name: docker playbook
+  vars_files:
+    - ./vars_file.yml
+
+  remote_user: "{{username}}"
+  hosts: "{{group_name}}"
+
+
+  tasks:
+   - set_fact:
+      os_script: "{{ script_centos if (group_name == 'centos') else script_ubuntu }}"
+      pkg_mgr: "{{ installer_centos if (group_name == 'centos') else installer_ubuntu }}"
+
+   - name: run "{{os_script}}" on group "{{group_name}}"
+     script: "{{os_script}}"
+  
+   - name: install apps via "{{pkg_mgr}}"
+     apt:
+      name: "{{apps}}"
+      state: "{{state}}"
+
+   - name: run "{{command}}" command
+     command: "{{command}}"
