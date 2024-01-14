@@ -1,0 +1,26 @@
+---
+- name: centos machines
+  hosts: centos , ubuntu
+  
+  tasks:
+   - name: install vim
+     yum: 
+      name: vim
+      state: present
+   
+   - name: ssh svc up
+     service: 
+      name: sshd
+      state: started
+      enabled: true
+  
+   - name: install vim
+     apt: 
+      name: vim
+      state: present
+   
+   - name: ssh svc up
+     service: 
+      name: ssh
+      state: started
+      enabled: true
