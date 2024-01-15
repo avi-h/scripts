@@ -1,0 +1,5 @@
+[ubuntu]
+test04  ansible_host=localhost ansible_port=97
+[centos]
+test03  ansible_host=localhost ansible_port=98
+test02  ansible_host=localhost ansible_port=99

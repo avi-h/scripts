@@ -1,12 +1,12 @@
 ---
-- name: docker playbook
+- name: my_playbook
   vars_files:
-    - ./vars_file.yml
+    - ./vars/vars_file.yml
 
   remote_user: "{{username}}"
   hosts: "{{group_name}}"
 
-
+ 
   tasks:
    - set_fact:
       os_script: "{{ script_centos if (group_name == 'centos') else script_ubuntu }}"
@@ -14,11 +14,36 @@
 
    - name: run "{{os_script}}" on group "{{group_name}}"
      script: "{{os_script}}"
-  
-   - name: install apps via "{{pkg_mgr}}"
+
+   - name: install apps via "{{installer_centos}}"
      yum:
       name: "{{apps}}"
       state: "{{state}}"
+     when: pkg_mgr == 'yum'
+  
+   - name: install apps via "{{installer_ubuntu}}"
+     apt:
+      name: "{{apps}}"
+      state: "{{state}}"
+     when: pkg_mgr == 'apt'
+    
+   - name: template a file - copy "{{src_path}}" 
+     template:
+       src: "{{src_path}}"
+       dest: "{{dest_path}}" 
+     tags:
+     - tag01
 
-   - name: run "{{command}}" command
-     command: "{{command}}"
+   - name: run command "{{command}}" 
+     shell: "{{command}}"
+     register: results
+     tags:
+     - tag01
+
+   #- debug: msg="{{results.stdout_lines}}"
+
+   - name: show results
+     debug:
+       msg: "{{results.stdout_lines}}"
+     tags:
+     - tag01
