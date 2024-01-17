@@ -1,17 +1,12 @@
 {
-        "group_name":"centos",
-        "inventory": "./hosts",
-        "username": "root",
-        
+        "group_name": "centos",
+
         "script_centos": "./scripts/docker-base-centos.sh",
         "script_ubuntu": "./scripts/pwsh_install_ubuntu.sh",
         
         "installer_centos": "yum",
         "installer_ubuntu": "apt",
-        
-        "apps": "vim,net-tools,traceroute,mtr,telnet,tcpdump,lshw",
-        "state": "present",
-        
+                
         "src_path": "./vars/get_hostname.j2",
         "dest_path": "/tmp/hostname.txt",
 

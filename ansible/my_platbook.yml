@@ -2,48 +2,73 @@
 - name: my_playbook
   vars_files:
     - ./vars/vars_file.yml
+  become: true
+  remote_user: "{{run_with}}"
 
-  remote_user: "{{username}}"
   hosts: "{{group_name}}"
 
- 
   tasks:
    - set_fact:
       os_script: "{{ script_centos if (group_name == 'centos') else script_ubuntu }}"
       pkg_mgr: "{{ installer_centos if (group_name == 'centos') else installer_ubuntu }}"
+     tags:
+     - facts 
 
    - name: run "{{os_script}}" on group "{{group_name}}"
      script: "{{os_script}}"
+     tags:
+     - script
 
    - name: install apps via "{{installer_centos}}"
      yum:
       name: "{{apps}}"
-      state: "{{state}}"
+      state: "{{app_state}}"
+     register: results
      when: pkg_mgr == 'yum'
+     tags:
+     - apps
   
    - name: install apps via "{{installer_ubuntu}}"
      apt:
       name: "{{apps}}"
-      state: "{{state}}"
+      state: "{{app_state}}"
+     register: results
      when: pkg_mgr == 'apt'
+     tags:
+     - apps
     
    - name: template a file - copy "{{src_path}}" 
      template:
        src: "{{src_path}}"
        dest: "{{dest_path}}" 
      tags:
-     - tag01
+     - file
 
    - name: run command "{{command}}" 
      shell: "{{command}}"
      register: results
      tags:
-     - tag01
+     - shell
 
    #- debug: msg="{{results.stdout_lines}}"
 
+   - name: add "{{username}}" user 
+     user:
+      name: "{{item}}"
+      #password: "{{password}}"
+      state: "{{user_state}}"
+      shell: /bin/bash
+      groups: "{{usergroup}}"
+      comment: "{{comment}}"
+     register: results
+     loop:
+      - "{{username}}"
+     #when: ansible_distribution == 'CentOS'
+     tags:
+     - user
+
    - name: show results
      debug:
-       msg: "{{results.stdout_lines}}"
+       msg: "{{results}}"
      tags:
-     - tag01
+     - results

@@ -1,3 +1,15 @@
-user:
+#general run
+run_with: root
+runas: root
+inventory: ./hosts
 
-pass:
+#user setup (in machine)
+username: ansible
+#password: 1q1q1q1q
+user_state: present
+usergroup: wheel
+comment: user for special tasks hahaha
+
+#apps
+apps: sudo,vim,net-tools,traceroute,mtr,telnet,tcpdump,lshw
+app_state: present
