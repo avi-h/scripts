@@ -11,6 +11,8 @@
    - set_fact:
       os_script: "{{ script_centos if (group_name == 'centos') else script_ubuntu }}"
       pkg_mgr: "{{ installer_centos if (group_name == 'centos') else installer_ubuntu }}"
+      custom_dict:
+        user_state: "{{user_state}}"
      tags:
      - facts 
 
@@ -48,24 +50,33 @@
      shell: "{{command}}"
      register: results
      tags:
-     - shell
+     - shell01
 
    #- debug: msg="{{results.stdout_lines}}"
 
-   - name: add "{{username}}" user 
+   - name: setup "{{username}}" user 
      user:
       name: "{{item}}"
-      #password: "{{password}}"
+      password: "{{user_pass}}"
       state: "{{user_state}}"
-      shell: /bin/bash
+      create_home: true
+      home: /home/{{username}}
+      shell: "{{shell_path}}"
       groups: "{{usergroup}}"
       comment: "{{comment}}"
      register: results
      loop:
       - "{{username}}"
-     #when: ansible_distribution == 'CentOS'
+     when: ansible_distribution == 'CentOS'
      tags:
      - user
+
+   - name: remove {{username}} user home dir
+     shell: rm -rvf /home/{{username}}
+     register: results
+     tags:
+     - homedir
+     when: custom_dict.user_state == 'absent'
 
    - name: show results
      debug:
