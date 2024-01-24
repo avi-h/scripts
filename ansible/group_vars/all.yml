@@ -4,14 +4,11 @@ runas: root
 inventory: ./hosts
 
 #user setup (in machine)
-username: ansible
-user_pass: #mkpasswd --method=sha-512
- $6$pvsWYYahBpRtHYn7$9WM3PHg.zACt5CEPcyf15Jz6v4OtcDGqxNxiTVNqqyZ.6k.ZLwWThw1wwqalPUuyrj5TBwe4oxqqHJbGDLRkD1
-user_state: present
-usergroup: wheel
+ansible_username: ansible
+usergroup_centos: wheel
+usergroup_ubuntu: admin
 shell_path: /bin/bash
 comment: user for auto tasks
 
-#apps
-apps: sudo,vim,net-tools,traceroute,mtr,telnet,tcpdump,lshw,tree,whois
-app_state: present
+#another encryption option is to run the command: mkpasswd --method=sha-512
+#ansible_user_pass: copy here the encrypted hash

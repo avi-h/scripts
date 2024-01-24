@@ -2,7 +2,7 @@
 # Prerequisites
 
 # Update the list of packages
-apt-get update
+apt-get update -y
 
 # Install pre-requisite packages.
 apt-get install -y wget

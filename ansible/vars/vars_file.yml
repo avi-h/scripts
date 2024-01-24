@@ -1,15 +1,16 @@
 {
-        "group_name": "centos",
-
-        "script_centos": "./scripts/docker-base-centos.sh",
-        "script_ubuntu": "./scripts/pwsh_install_ubuntu.sh",
+        "command_centos": "yum search batatot",
+        "command_ubuntu": "apt search kabukim",
+        "update_root_pass": "echo root:{{root_pass}} | chpasswd",
+        
+        "script_centos": "docker-base-centos.sh",
+        "script_ubuntu": "pwsh_install_ubuntu.sh",
         
         "installer_centos": "yum",
         "installer_ubuntu": "apt",
                 
-        "src_path": "./vars/get_hostname.j2",
+        "src_path": "get_hostname.j2",
         "dest_path": "/tmp/hostname.txt",
 
-        "command": "cat /tmp/hostname.txt",
         "handler_name": "i_did_something"
 }
