@@ -1,0 +1,7 @@
+---
+- name: first setup role
+  hosts: CentOS
+  become: true
+
+  roles:
+    - first_setup

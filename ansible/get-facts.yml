@@ -1,0 +1,7 @@
+- name: output facts
+  hosts: CentOS
+  gather_facts: true
+  tasks:
+  - name: print ansible facts
+    debug:
+      msg: IPv4 of "{{ansible_fqdn}}" is "{{ansible_default_ipv4.address}}"

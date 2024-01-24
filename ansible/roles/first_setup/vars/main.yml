@@ -1,0 +1,23 @@
+
+command_centos: yum search batatot
+command_ubuntu: apt search kabukim
+update_root_pass: echo root:{{root_pass}} | chpasswd
+script_centos: docker-base-centos.sh
+script_ubuntu: pwsh_install_ubuntu.sh
+installer_centos: yum
+installer_ubuntu: apt
+src_path: get_hostname.j2
+dest_path: /tmp/hostname.txt
+handler_name: i_did_something
+
+#apps
+apps: sudo,vim,passwd,net-tools,traceroute,mtr,telnet,tcpdump,lshw,tree,whois
+app_state: present
+
+#users (mkpasswd --method=sha-512)
+ansible_user_pass:
+ $6$iyZ6zK6Mgkl48zaF$4GlxXa5PiRUJt5UveYCzCnMcqgYQQmtPM9nDyjk9BdLkBn7oTRbdSOp/H2RA1LtppnYHPP8uatcU1uqSsXLlS1
+root_pass:
+ $6$n7RR2Kf6ZYjUl3/1$4K0Czh/isbEIgzj.8/VBi0vCsPf9M.qK2jWQvFoaXaxhSAHGErRrkHNhKYFfZRt3i6YWZRiITGIhJGVTl5ZtY0
+
+user_state: present

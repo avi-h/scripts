@@ -1,0 +1,96 @@
+---
+- name: my_playbook
+  vars_files:
+    - ./vars/vars_file.yml
+  become: true
+  remote_user: "{{run_with}}"
+
+  hosts: "{{host_group}}"
+
+  tasks:
+   - set_fact:
+      os_script: "{{script_centos if (ansible_distribution == 'CentOS') else script_ubuntu}}"
+      pkg_mgr: "{{installer_centos if (ansible_distribution == 'CentOS') else installer_ubuntu}}"
+      command: "{{command_centos if (ansible_distribution == 'CentOS') else command_ubuntu}}"
+      usergroup: "{{usergroup_centos if (ansible_distribution == 'CentOS') else usergroup_ubuntu}}"
+      custom_dict:
+        user_state: "{{user_state}}"
+     tags:
+     - facts 
+
+   - name: running script
+     script: "{{os_script}}"
+     register: results
+     tags:
+     - script
+
+   - name: install apps via "{{installer_centos}}"
+     yum:
+      name: "{{apps}}"
+      state: "{{app_state}}"
+     register: results
+     when: pkg_mgr == 'yum'
+     tags:
+     - apps
+  
+   - name: install apps via "{{installer_ubuntu}}"
+     apt:
+      name: "{{apps}}"
+      state: "{{app_state}}"
+     register: results
+     when: pkg_mgr == 'apt'
+     tags:
+     - apps
+    
+   - name: template a file - copy "{{src_path}}" 
+     template:
+       src: "{{src_path}}"
+       dest: "{{dest_path}}" 
+     tags:
+     - file
+
+   - name: update root password 
+     shell: "{{update_root_pass}}"
+     register: results
+     tags:
+     - command
+
+   #- debug: msg="{{results.stdout_lines}}"
+
+   - name: add "{{usergroup_ubuntu}}" group 
+     group:
+      name: "{{usergroup_ubuntu}}"
+      state: present
+     register: results
+     when: ansible_distribution  == 'Ubuntu'
+     tags:
+     - group
+
+   - name: setup "{{ansible_username}}" user
+     user:
+      name: "{{item}}"
+      password: "{{ansible_user_pass}}"
+      state: "{{user_state}}"
+      create_home: true
+      home: /home/{{ansible_username}}
+      shell: "{{shell_path}}"
+      groups: "{{usergroup}}"
+      comment: "{{comment}}"
+     register: results
+     loop:
+      - "{{ansible_username}}"
+     tags:
+     - user
+
+   - name: remove {{ansible_username}} user home dir
+     shell: rm -rvf /home/{{ansible_username}}
+     register: results
+     tags:
+     - homedir
+     when: custom_dict.user_state == 'absent'
+
+   - name: show results
+     debug:
+       msg: "{{results}}"
+     tags:
+     - results
