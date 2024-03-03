@@ -1,23 +1,28 @@
 
 command_centos: yum search batatot
 command_ubuntu: apt search kabukim
-update_root_pass: echo root:{{root_pass}} | chpasswd
-script_centos: docker-base-centos.sh
+shell_command: yum install open-vm-tools -y;systemctl enable vmtoolsd;systemctl start vmtoolsd
+script_centos: docker-base-centos.sh  
 script_ubuntu: pwsh_install_ubuntu.sh
 installer_centos: yum
 installer_ubuntu: apt
+installer_alpine: apk
 src_path: get_hostname.j2
 dest_path: /tmp/hostname.txt
-handler_name: i_did_something
+handler_name: i_did_something_Here
 
 #apps
-apps: sudo,vim,passwd,net-tools,traceroute,mtr,telnet,tcpdump,lshw,tree,whois
+apps: sudo,vim,passwd,net-tools,traceroute,mtr,
+  telnet,tcpdump,lshw,tree,whois,python3,epel-release,bash-completion
+
+apps_alpine: sudo,vim,net-tools,traceroute,mtr,
+  tcpdump,lshw,tree,whois,python3,py3-pip,busybox,busybox-extras
+  
 app_state: present
 
 #users (mkpasswd --method=sha-512)
 ansible_user_pass:
- $6$iyZ6zK6Mgkl48zaF$4GlxXa5PiRUJt5UveYCzCnMcqgYQQmtPM9nDyjk9BdLkBn7oTRbdSOp/H2RA1LtppnYHPP8uatcU1uqSsXLlS1
+ $6$0PM.iO/XN8X9fqlf$8wxitYp7jLaQd0KpfVmikYF9PJK14d.QyRADALcOzBDDYpawad8qsglFVdG43iTV1bonupk0n4MduDdgvrjAJ/
 root_pass:
- $6$n7RR2Kf6ZYjUl3/1$4K0Czh/isbEIgzj.8/VBi0vCsPf9M.qK2jWQvFoaXaxhSAHGErRrkHNhKYFfZRt3i6YWZRiITGIhJGVTl5ZtY0
-
+ $6$L1bP9AvWCcvksHG1$IGfTqyv3hZgESqmN8h5YyGZRb311OiLhOhmxDSvafh/phNleNY7PgHLn.22RbW1kj5JG/5tsar/JapEp/zvZu0
 user_state: present

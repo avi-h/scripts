@@ -5,7 +5,7 @@ $containers = @(
 'test04')
 #------------------------
 
-$status = docker ps -a | sls 'exit'
+$status = docker ps -a | Select-String 'exit'
 
 $servicepath = '/usr/sbin/sshd'
 
@@ -14,7 +14,7 @@ if ($status) {
 
 foreach ($container in $containers) {
 docker start $container
-$OsType = docker exec $container cat /etc/os-release | sls '^ID='
+$OsType = docker exec $container cat /etc/os-release | Select-String '^ID='
 #$OsType = ($OsType -replace 'ID=','')-replace '"',''
 
 if ($OsType -match 'centos') {docker exec $container $servicepath}

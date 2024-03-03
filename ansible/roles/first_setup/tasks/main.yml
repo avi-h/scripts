@@ -1,7 +1,7 @@
 ---
    - set_fact:
-      os_script: "{{script_centos if (ansible_distribution == 'CentOS') else script_ubuntu}}"
-      pkg_mgr: "{{installer_centos if (ansible_distribution == 'CentOS') else installer_ubuntu}}"
+      os_script: "{{script_centos if (ansible_distribution == 'CentOS') 
+        else script_ubuntu}}"
       command: "{{command_centos if (ansible_distribution == 'CentOS') else command_ubuntu}}"
       usergroup: "{{usergroup_centos if (ansible_distribution == 'CentOS') else usergroup_ubuntu}}"
       custom_dict:
@@ -12,6 +12,7 @@
    - name: running script
      script: "{{os_script}}"
      register: script
+     when: ansible_distribution  != 'Alpine'
      tags:
      - script
 
@@ -20,7 +21,7 @@
       name: "{{apps}}"
       state: "{{app_state}}"
      register: results
-     when: pkg_mgr == 'yum'
+     when: ansible_distribution  == 'CentOS'
      tags:
      - apps
   
@@ -29,7 +30,16 @@
       name: "{{apps}}"
       state: "{{app_state}}"
      register: results
-     when: pkg_mgr == 'apt'
+     when: ansible_distribution  == 'Ubuntu'
+     tags:
+     - apps
+
+   - name: install apps via "{{installer_alpine}}"
+     apk:
+      name: "{{apps_alpine}}"
+      state: "{{app_state}}"
+     register: results
+     when: ansible_distribution  == 'Alpine'
      tags:
      - apps
     
@@ -40,13 +50,22 @@
      tags:
      - file
 
-   - name: update root password 
-     shell: "{{update_root_pass}}"
-     register: root_pass
+   - name: run shell command
+     shell: "{{shell_command}}"
+     register: my_shell
+     when: ansible_distribution == 'CentOS'
      tags:
      - command
 
    #- debug: msg="{{results.stdout_lines}}"
+
+   - name: update root password
+     user:
+      name: root
+      password: "{{root_pass}}"
+     register: root_password
+     tags:
+     - rootpass
 
    - name: add "{{usergroup_ubuntu}}" group 
      group:
@@ -82,6 +101,6 @@
 
    - name: show results
      debug:
-       msg: "{{script}}"
+       msg: "{{my_shell}}"
      tags:
      - results

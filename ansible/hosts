@@ -4,5 +4,4 @@ test04  ansible_host=localhost ansible_port=97
 test03  ansible_host=localhost ansible_port=98
 test02  ansible_host=localhost ansible_port=99
 [Test]
-test-centos ansible_host=localhost ansible_port=96
-test-ubuntu ansible_host=localhost ansible_port=95
+test  ansible_host=localhost ansible_port=98

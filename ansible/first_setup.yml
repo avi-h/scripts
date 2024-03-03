@@ -1,6 +1,6 @@
 ---
 - name: first setup role
-  hosts: CentOS
+  hosts: vmware
   become: true
 
   roles:

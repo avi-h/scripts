@@ -1,3 +1,4 @@
 ---
-installer_centos: yum
-installer_ubuntu: apt
+#default vars file, example:
+
+#var1: myvalue
