@@ -1,0 +1,7 @@
+GivenName,Surname,SamAccountName,Name,UserPrincipalName,Department,OU,Domain,ParentOU
+coco,loco,coco.loco,coco loco,coco.loco@Hola.local,Finance,"OU=Finance,OU=Departments,OU=HolaOU,DC=Hola,DC=local",Hola.local,"DC=Hola,DC=local"
+moshe,napazim,moshe.napazim,moshe napazim,moshe.napazim@Hola.local,Finance,"OU=Finance,OU=Departments,OU=HolaOU,DC=Hola,DC=local",Hola.local,"DC=Hola,DC=local"
+itzik,hazizim,itzik.hazizim,itzik hazizim,itzik.hazizim@Hola.local,Finance,"OU=Finance,OU=Departments,OU=HolaOU,DC=Hola,DC=local",Hola.local,"DC=Hola,DC=local"
+tal,kapzonim,tal.kapzonim,tal kapzonim,tal.kapzonim@Hola.local,Sales,"OU=Sales,OU=Departments,OU=HolaOU,DC=Hola,DC=local",Hola.local,"DC=Hola,DC=local"
+haim,purim,haim.purim,haim purim,haim.purim@Hola.local,Sales,"OU=Sales,OU=Departments,OU=HolaOU,DC=Hola,DC=local",Hola.local,"DC=Hola,DC=local"
+doda,ktana,doda.ktana,doda ktana,doda.ktana@Hola.local,Sales,"OU=Sales,OU=Departments,OU=HolaOU,DC=Hola,DC=local",Hola.local,"DC=Hola,DC=local"
