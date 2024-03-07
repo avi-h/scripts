@@ -1,6 +1,7 @@
 ﻿#UserList
 $users = Import-Csv 'C:\temp\users.csv'
 
+
 #generate random password (function)
 function Generate-Password {
     param (
@@ -37,7 +38,9 @@ $verifyUser = (Get-ADUser $user.SamAccountName).SamAccountName
 
 #add and display the results in a table
 $result = @{$verifyUser = $pass}
-$result | select @{l='UserName';e={$_.keys}} ,
-@{l='TempPass';e={$_.values}}
-
+$result | select @{l='UserName';
+                 e={$_.keys}} ,
+                 
+                 @{l='TempPass';
+                 e={$_.values}}
 }
