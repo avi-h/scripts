@@ -1,6 +1,6 @@
 ---
 - name: first setup role
-  hosts: vmware
+  hosts: redhat
   become: true
 
   roles:

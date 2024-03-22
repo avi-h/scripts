@@ -1,9 +1,9 @@
 ---
    - set_fact:
-      os_script: "{{script_centos if (ansible_distribution == 'CentOS') 
+      os_script: "{{script_centos if (ansible_distribution == 'Rocky') 
         else script_ubuntu}}"
-      command: "{{command_centos if (ansible_distribution == 'CentOS') else command_ubuntu}}"
-      usergroup: "{{usergroup_centos if (ansible_distribution == 'CentOS') else usergroup_ubuntu}}"
+      command: "{{command_centos if (ansible_distribution == 'Rocky') else command_ubuntu}}"
+      usergroup: "{{usergroup_centos if (ansible_distribution == 'Rocky') else usergroup_ubuntu}}"
       custom_dict:
         user_state: "{{user_state}}"
      tags:
@@ -21,7 +21,7 @@
       name: "{{apps}}"
       state: "{{app_state}}"
      register: results
-     when: ansible_distribution  == 'CentOS'
+     when: ansible_distribution == 'Rocky'
      tags:
      - apps
   
@@ -53,7 +53,7 @@
    - name: run shell command
      shell: "{{shell_command}}"
      register: my_shell
-     when: ansible_distribution == 'CentOS'
+     when: ansible_distribution == 'Rocky'
      tags:
      - command
 
